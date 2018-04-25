@@ -65,7 +65,7 @@ public:
      */
     void transladapoli(float a, float b);
     /**
-     * @brief rotacionaPoli Rotaciona o poligono em ang radianos.
+     * @brief rotacionaPoli Rotaciona o poligono em ang graus.
      * @param a coordenada 'x' do ponto a qual se quer rotacionar.
      * @param b coordenada 'y' do ponto a qual se quer rotacionar.
      * @param ang é o ângulo, em radianos, a qual quer rotacionar.
