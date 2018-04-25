@@ -6,18 +6,18 @@
 using namespace std;
 
 Poligono::Poligono(){
-    cout<<"Chamou Const sem arg de Poligono\n";
+    //cout<<"Chamou Const sem arg de Poligono\n";
     tam = 0;
     t = new Point[0];
 }
 Poligono::Poligono(int _tam){
-    cout<<"Chamou Const com arg de Poligono\n";
+    //cout<<"Chamou Const com arg de Poligono\n";
 
      tam = _tam;
      t = new Point[_tam];
 }
 Poligono::Poligono(float x, float y, float largura, float altura){
-    cout<<"Chamou Const com arg de Retangulo de Poligono\n";
+   // cout<<"Chamou Const com arg de Retangulo de Poligono\n";
     tam = 4;
     t = new Point[4];
     t[0].setXY(x, y);
@@ -29,26 +29,16 @@ Poligono::Poligono(float x, float y, float largura, float altura){
 
 }
 Poligono::~Poligono(){
-    cout<<"Chamou Destrutor de Poligono\n";
+   // cout<<"Chamou Destrutor de Poligono\n";
 }
 
 void Poligono::setRet(void){
     float a, b;
-    bool resp = 0;
-    while(resp != 1){
         for(int i=0;i<tam;i++){
             cout << "Insira o ponto "<< i <<endl;
             cin>>a>>b;
             t[i].setXY(a, b);
-
-        }
-        if(verificaConvexo() == 1){
-            resp=1;
-        }else{
-            cout<<"Voce nao digitou um poligono convexo\n";
-            resp=0;
-        }
-    }
+      }
 }
 
 void Poligono::imprimePol(){
@@ -87,15 +77,6 @@ float Poligono::areapoli(void){
     delete []k;
 }
 
-bool Poligono::verificaConvexo()
-{
-    if(areapoli() == 0){
-        return 0;
-    }else{
-        return 1;
-    }
-}
-
 
 int Poligono::getV(){
     return tam;
@@ -109,6 +90,7 @@ void Poligono::transladapoli(float a, float b){
 
 void Poligono::rotacionaPoli(float a, float b, float ang){
 
+    ang = (ang*M_PI)/180;
     float newX, newY;
     for(int i=0;i<tam;i++){
         newX = a + (t[i].getX() - a) * cos(ang) - (t[i].getY() - b)*sin(ang);
@@ -127,7 +109,7 @@ void Poligono::centroide(void)
     }
 
     float area = areapoli();
-    cout <<"A area dentro da funcao centroide eh: "<<area<<endl;
+   // cout <<"A area dentro da funcao centroide eh: "<<area<<endl;
 
     for(int i=0; i<(tam-1);i++){
         cx = cx + (k[i].getX() + k[i+1].getX())*(k[i].getX()*k[i+1].getY() - k[i].getY()*k[i+1].getX());

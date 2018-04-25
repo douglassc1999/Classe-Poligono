@@ -53,7 +53,6 @@ public:
      * @return retorna um float como área do polígono.
      */
     float areapoli(void);
-    bool verificaConvexo(void);
     /**
      * @brief getV função para saber o número de vértices do polígono.
      * @return retorna um inteiro representando o número de vértices.
@@ -73,6 +72,9 @@ public:
      */
     void rotacionaPoli(float a, float b, float ang);
 
+    /**
+     * @brief centroide imprime na tela o centroide do poligono.
+     */
     void centroide(void);
     /**
      * @brief imprimePol mostra os pontos que formam o poligono na forma (x1, y1)->(x2, y2)...

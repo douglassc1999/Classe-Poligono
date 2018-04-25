@@ -9,12 +9,12 @@ Point::Point(){
     y = 0;
 }
 Point::Point(float _x, float _y){
-    cout<<"Chamou construtor de Point\n";
+    //cout<<"Chamou construtor de Point\n";
     x=_x;
     y=_y;
 }
 Point::~Point(){
-    cout<<"Chamou destrutor de Point\n";
+    //cout<<"Chamou destrutor de Point\n";
 }
 void Point::setX(float _x){
     x=_x;
